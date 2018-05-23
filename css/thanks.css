@@ -1,0 +1,96 @@
+body, html {
+    height: 900px;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    color: #3f3534;
+    font-family: "Roboto", sans-serif;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+.input-wrap {
+    margin-bottom: 15px;
+}
+.input-wrap:last-child {
+    margin-bottom: 0;
+}
+
+.btn-submit {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #f44e56;
+    padding: 10px 30px;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+.thanks {
+    height: 100%;
+    width: 100%;
+    background: url('../images/thanks-bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.thanks__center {
+    width: 800px;
+    padding: 40px;
+    margin: auto;
+    background-color:rgba(255, 255, 255, 0.8);
+}
+
+.thanks__heading {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.thanks__descr {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-thanks {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-thanks__heading {
+    padding: 30px;
+    background-color:rgba(255, 255, 255, 0.6);
+    text-align: center;    
+}
+
+.form-thanks__content {
+    padding: 15px 25px;
+    background-color: rgba(130, 128, 128, 0.6);
+}

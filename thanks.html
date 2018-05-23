@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Спасибо</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="./css/thanks.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WCCKHNT');
+    </script>
+    <!-- End Google Tag Manager --> 
+    <script src="https://r7k12.ru/scripts/b05277575ae6922f82684ecdeec75d14/counter.js"></script>       
+    <script>
+        R7K12.send('pageview');
+    </script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            jQuery('.btn-submit').click(function (e) {
+                e.preventDefault();
+
+                btn = this;
+
+                block_form = jQuery(btn).parents("#form-thanks");
+
+                name = jQuery(block_form).find('[name="name"]').val();
+                email = jQuery(block_form).find('[name="email"]').val();
+
+                if (name == "undefined") {
+                    name = "";
+                }
+
+                if (email == "undefined") {
+                    email = "";
+                }
+
+                if ((name != "") && (email != null)) {
+                    R7K12.crm({
+                        type: "Form", //тип заявки
+                        title: "Заявка с сайта", //Заголовок заявка
+                        comment: "zavolga.info", //комментарий
+                        name: name, //имя контакта
+                        email: email, //телефон
+                        tag: 'Ярославль',
+                        fields: {
+                            lead: {
+                                '537747': location.href,
+                                '448347': "UA-49298821-15",
+                                '555033': "Ярославль"
+                            }
+                        }
+                    });
+
+                    setTimeout(function () {
+                        window.location.href = "http://zavolga.info/";
+                    }, 2000);
+                }
+            });
+        })
+    </script>
+    <section class="thanks">
+        <div class="container">
+            <div class="thanks__center">
+                <h1 class="thanks__heading">Спасибо за заявку, наш менеджер свяжется с вами в ближайшее время.</h1>
+                <p class="thanks__descr">Пока ожидаете звонка, Вы можете сразу получить каталог проектов на E-mail.</p>
+                <form id="form-thanks" class="form-thanks">
+                    <h2 class="form-thanks__heading">Получить каталог проектов</h2>
+                    <div class="form-thanks__content">
+                        <div class="input-wrap">
+                            <input type="text" name="name" placeholder="Введите имя" required>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="email" name="email" placeholder="Введите почту" required>
+                        </div>
+                        <a href="#" class="btn-submit">Получить</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
